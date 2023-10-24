@@ -9,6 +9,8 @@ public class Verification : ValueObject
     public DateTime? VerifiedAt { get; private set; } = null;
     public bool IsActive => VerifiedAt != null && ExpiresAt == null;
 
+    public Verification() { }
+
     public void Verify(string code)
     {
         if (IsActive)

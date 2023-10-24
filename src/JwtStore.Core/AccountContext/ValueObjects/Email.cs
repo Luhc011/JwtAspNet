@@ -7,6 +7,9 @@ namespace JwtStore.Core.AccountContext.ValueObjects;
 public partial class Email : ValueObject
 {
     private const string Pattern = @"^[\w.-]+@[\w-]+\.[a-z]{2,3}$";
+    public string Address { get; }
+    public string Hash => Address.ToBase64();
+    public Verification Verification { get; private set; } = new();
 
     #region Constructors
     public Email(string address)
@@ -26,18 +29,9 @@ public partial class Email : ValueObject
     }
     #endregion
 
-    #region Properties
-    public string Address { get; }
-    public string Hash => Address.ToBase64();
-    public Verification Verification { get; private set; } = new();
-    #endregion
-
-    #region Operators
     public static implicit operator string(Email email) => email.ToString();
     public static implicit operator Email(string address) => new(address);
     public void ResendVerification() => Verification = new();
-    #endregion
-
     public override string ToString() => Address.Trim().ToLowerInvariant();
 
     #region Regex
