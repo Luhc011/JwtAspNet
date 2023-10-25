@@ -1,7 +1,7 @@
-﻿using JwtStore.Core.AccountContext.ValueObjects;
-using JwtStore.Core.SharedContext.Entities;
+﻿using JwtStore.Core.Contexts.AccountContext.ValueObjects;
+using JwtStore.Core.Contexts.SharedContext.Entities;
 
-namespace JwtStore.Core.AccountContext.Entities;
+namespace JwtStore.Core.Contexts.AccountContext.Entities;
 
 public class User : Entity
 {

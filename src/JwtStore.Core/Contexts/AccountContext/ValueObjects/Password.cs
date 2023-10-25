@@ -1,8 +1,7 @@
-﻿using JwtStore.Core.SharedContext.ValueObjects;
-using System.Reflection.PortableExecutable;
+﻿using JwtStore.Core.Contexts.SharedContext.ValueObjects;
 using System.Security.Cryptography;
 
-namespace JwtStore.Core.AccountContext.ValueObjects;
+namespace JwtStore.Core.Contexts.AccountContext.ValueObjects;
 
 public class Password : ValueObject
 {
