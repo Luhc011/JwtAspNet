@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JwtStore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231025184814_v1")]
+    [Migration("20231030190106_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -78,7 +78,6 @@ namespace JwtStore.Api.Migrations
                                         .HasColumnName("EmailVerificationCode");
 
                                     b2.Property<DateTime?>("ExpiresAt")
-                                        .IsRequired()
                                         .HasColumnType("datetime2")
                                         .HasColumnName("EmailVerificationExpiresAt");
 
