@@ -23,5 +23,5 @@ public class Response : ResponseBase
     }
 
     public ResponseData? Data { get; set; }
-    public record ResponseData(Guid Id, string Name, string Email);
 }
+    public record ResponseData(Guid Id, string Name, string Email);
