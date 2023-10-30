@@ -9,6 +9,7 @@ public class User : Entity
     public Email Email { get; private set; } = null!;
     public Password Password { get; private set; } = null!;
     public string Image { get; private set; } = string.Empty;
+    public List<Role> Roles { get; set; } = new();
 
     protected User() { }
     public User(string name, Email email, Password password)
