@@ -23,7 +23,7 @@ public static class Configuration
 
     public class EmailConfiguration
     {
-        public string DefaultFromEmail { get; set; } = "lucas@teste.io";
+        public string DefaultFromEmail { get; set; } = "lucashcardoso26@gmail.com";
         public string FromName { get; set; } = "Lucas.io";
     }
 

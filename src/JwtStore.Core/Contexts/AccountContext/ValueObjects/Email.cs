@@ -32,7 +32,7 @@ public partial class Email : ValueObject
     public static implicit operator string(Email email) => email.ToString();
     public static implicit operator Email(string address) => new(address);
     public void ResendVerification() => Verification = new();
-    public override string ToString() => Address.Trim().ToLowerInvariant();
+    public override string ToString() => Address;
 
     #region Regex
     [GeneratedRegex(Pattern)]

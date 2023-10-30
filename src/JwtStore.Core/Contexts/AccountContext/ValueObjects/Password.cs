@@ -22,8 +22,13 @@ public class Password : ValueObject
 
         Hash = Hashing(text);
     }
+    public bool Challenges(string password)
+    {
+        if (string.IsNullOrEmpty(password))
+            throw new PasswordValidationException("Password should not be null or empty");
 
-    public bool Challenges(string plainTextPassword) => Verify(Hash, plainTextPassword);
+        return Verify(Hash, password);
+    }
 
     private static string Generate(short lenght = 16, bool includeSpecialChars = true, bool upperCase = false)
     {
@@ -75,6 +80,8 @@ public class Password : ValueObject
 
         return keyToCheck.Length == keySize && keyToCheck.AsSpan().SequenceEqual(key);
     }
+
+
 
     public class PasswordValidationException : Exception
     {
